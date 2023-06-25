@@ -6,15 +6,15 @@ module.exports = (sequelize, Datatypes) => {
             autoIncrement: true,
             allowNull: false
         },
-        name: {
+        username: {
             type: Datatypes.STRING,
             allowNull: false
         },
-        age: {
-            type: Datatypes.SMALLINT,
-            allowNull: false
+        password: {
+            type: Datatypes.STRING,
+            allowNull: false,
         },
-        address: Datatypes.STRING,
+        role: Datatypes.SMALLINT,
         createdAt: {
             type: Datatypes.DATE,
             allowNull: false
@@ -25,7 +25,7 @@ module.exports = (sequelize, Datatypes) => {
         },
 
     }, {
-        tableName: 'users'
+        tableName: 'Users'
     })
 
     return User
