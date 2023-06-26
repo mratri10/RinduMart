@@ -8,6 +8,7 @@ var usersRouter = require('./routes/users');
 var newUserRouter = require('./routes/newUsers')
 var regionRouter = require('./routes/region')
 var signupRouter = require('./routes/auth/signup')
+var signinRouter = require('./routes/auth/signin')
 
 var app = express();
 
@@ -32,5 +33,6 @@ app.use('/users', usersRouter);
 app.use('/newuser', newUserRouter)
 app.use('/region', regionRouter)
 app.use('/signup', signupRouter)
+app.use('/signin', signinRouter)
 
 module.exports = app;
