@@ -9,6 +9,8 @@ var newUserRouter = require('./routes/newUsers')
 var regionRouter = require('./routes/region')
 var signupRouter = require('./routes/auth/signup')
 var signinRouter = require('./routes/auth/signin')
+var biodataRouter = require('./routes/profile/biodata');
+const authenticateToken = require('./middleware');
 
 var app = express();
 
@@ -34,5 +36,6 @@ app.use('/newuser', newUserRouter)
 app.use('/region', regionRouter)
 app.use('/signup', signupRouter)
 app.use('/signin', signinRouter)
+app.use('/biodata', authenticateToken, biodataRouter)
 
 module.exports = app;

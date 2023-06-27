@@ -41,10 +41,11 @@ router.post('/', async (req, res) => {
         }
 
         const accessToken = jwt.sign({ username: username }, process.env.SECRET_KEY);
+        const respon = await user.update({ token: accessToken })
         res.json({
             status: 200,
             message: 'Berhasil Login',
-            respon: { ...user.toJSON(), token: accessToken }
+            respon
         });
     } catch (error) {
         res.status(500).json({

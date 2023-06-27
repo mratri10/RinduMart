@@ -15,6 +15,7 @@ module.exports = (sequelize, Datatypes) => {
             allowNull: false,
         },
         role: Datatypes.SMALLINT,
+        token: Datatypes.STRING,
         createdAt: {
             type: Datatypes.DATE,
             allowNull: false
@@ -25,7 +26,7 @@ module.exports = (sequelize, Datatypes) => {
         },
 
     }, {
-        tableName: 'Users'
+        tableName: 'users'
     })
 
     return User
